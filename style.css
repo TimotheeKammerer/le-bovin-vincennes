@@ -1,13 +1,11 @@
 :root {
-  --couleur-principale: #2c3e50;
-  --couleur-accent: #e67e22;
-  --couleur-fond-clair: #f4f4f4;
-  --couleur-texte: #333333;
-  --police-titre: 'Poppins', sans-serif;
+  --couleur-principale: #1a1a1a;
+  --couleur-accent: #b5352c;
+  --couleur-fond-clair: #f4f1ec;
+  --couleur-texte: #2b2b2b;
+  --police-titre: 'Playfair Display', serif;
   --police-texte: 'Open Sans', sans-serif;
 }
-
-
 
 /* Reset CSS moderne */
 *, *::before, *::after {
@@ -69,12 +67,18 @@ header {
   padding: 1rem 2rem;
 }
 
+header .logo {
+  font-family: var(--police-titre);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 header nav ul {
   display: flex;
   gap: 1.5rem;
 }
 
-/* Section hero : centrée verticalement et horizontalement */
+/* Section hero */
 #hero {
   display: flex;
   flex-direction: column;
@@ -82,20 +86,34 @@ header nav ul {
   text-align: center;
   gap: 1rem;
   padding: 4rem 1.5rem;
+  background-color: var(--couleur-fond-clair);
+}
+
+#hero img {
+  max-width: 600px;
+  border-radius: 8px;
+  margin-top: 1rem;
 }
 
 #hero .btn {
-  background-color: var(--couleur-principale);
+  background-color: var(--couleur-accent);
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
 }
 
-/* Section services : 3 blocs côte à côte, qui s'empilent si pas de place */
+/* Section services */
 #services {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
+  text-align: center;
+}
+
+#services h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 #services .service {
@@ -106,11 +124,22 @@ header nav ul {
   text-align: center;
 }
 
-/* Galerie : grille responsive automatique */
-#galerie {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+/* Section à propos */
+#a-propos {
+  text-align: center;
+}
+
+#a-propos h2 {
+  margin-bottom: 1rem;
+}
+
+/* Section contact */
+#contact {
+  text-align: center;
+}
+
+#contact h2 {
+  margin-bottom: 1rem;
 }
 
 /* Footer */
