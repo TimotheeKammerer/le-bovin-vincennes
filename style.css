@@ -5,9 +5,10 @@
   --couleur-texte: #2b2b2b;
   --police-titre: 'Playfair Display', serif;
   --police-texte: 'Open Sans', sans-serif;
+  --police-logo: 'Alex Brush', cursive;
+  --police-menu: 'Cormorant Garamond', serif;
 }
 
-/* Reset CSS moderne */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -16,6 +17,7 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -51,98 +53,303 @@ h1, h2, h3 {
   font-family: var(--police-titre);
 }
 
-/* Conteneur général : centre le contenu et limite sa largeur */
 header, section, footer {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
 }
 
-/* Header : logo à gauche, menu à droite, alignés sur une ligne */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: none;
   padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
 }
 
 header .logo {
-  font-family: var(--police-titre);
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-family: var(--police-logo);
+  font-size: 2.2rem;
+  font-weight: normal;
 }
 
 header nav ul {
   display: flex;
   gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
-/* Section hero */
+/* HERO */
 #hero {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
   gap: 1rem;
-  padding: 4rem 1.5rem;
-  background-color: var(--couleur-fond-clair);
+  height: 100vh;
+  max-width: none;
+  padding: 2rem;
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('images/hero.png') center/cover no-repeat;
+  color: white;
 }
 
-#hero img {
-  max-width: 600px;
-  border-radius: 8px;
-  margin-top: 1rem;
-}
+#hero h1, #hero p { color: white; }
 
 #hero .btn {
   background-color: var(--couleur-accent);
   color: white;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 4px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-/* Section services */
-#services {
+.scroll-fleche {
+  position: absolute;
+  bottom: 2rem;
+  font-size: 2rem;
+  color: white;
+  animation: rebond 1.5s infinite;
+}
+
+@keyframes rebond {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+/* MENU */
+#menu {
+  position: relative;
+  background-color: var(--couleur-principale);
+  color: white;
+}
+
+#menu h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.menu-colonnes {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
-  text-align: center;
+  justify-content: center;
+}
+
+.menu-col {
+  flex: 1 1 280px;
+  background-color: rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+
+.menu-col summary {
+  cursor: pointer;
+  font-family: var(--police-titre);
+  font-size: 1.3rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-col summary::after {
+  content: '▾';
+  transition: transform 0.2s;
+}
+
+.menu-col[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.menu-col summary::-webkit-details-marker {
+  display: none;
+}
+
+.menu-contenu {
+  margin-top: 1rem;
+  font-family: var(--police-menu);
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+.menu-contenu h4 {
+  font-style: normal;
+  font-family: var(--police-titre);
+  margin: 0.75rem 0 0.35rem;
+  color: var(--couleur-accent);
+}
+
+.menu-contenu p {
+  margin-bottom: 0.3rem;
+}
+
+/* SERVICES / INFOS PRATIQUES */
+#services {
+  background-color: white;
+  background-image: repeating-linear-gradient(135deg, rgba(0,0,0,0.02) 0px, rgba(0,0,0,0.02) 2px, transparent 2px, transparent 12px);
 }
 
 #services h2 {
-  width: 100%;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
-#services .service {
-  flex: 1 1 250px;
+.infos-grille {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.infos-bloc {
+  flex: 1 1 220px;
+}
+
+.infos-bloc h3 {
+  font-family: var(--police-titre);
+  margin-bottom: 0.75rem;
+  color: var(--couleur-accent);
+}
+
+.infos-bloc p {
+  margin-bottom: 0.25rem;
+}
+
+.paiements {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.paiement-badge {
   background-color: var(--couleur-fond-clair);
-  padding: 1.5rem;
-  border-radius: 8px;
-  text-align: center;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
 }
 
-/* Section à propos */
+/* A PROPOS */
 #a-propos {
+  position: relative;
   text-align: center;
+  background-color: var(--couleur-fond-clair);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23000000' stroke-opacity='0.06' stroke-width='2'%3E%3Cpath d='M60 90 Q50 60 70 50 Q75 35 90 40 Q100 25 115 35 Q135 30 140 50 Q160 55 150 75 Q160 90 145 100 Q150 120 130 120 L130 140 L125 140 L125 122 Q100 128 75 118 L70 140 L65 140 L68 115 Q45 105 60 90 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
 }
 
 #a-propos h2 {
   margin-bottom: 1rem;
 }
 
-/* Section contact */
+/* GALERIE */
+#galerie {
+  text-align: center;
+}
+
+#galerie h2 {
+  margin-bottom: 1.5rem;
+}
+
+.galerie-grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.galerie-grille img {
+  border-radius: 8px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* AVIS */
+#avis {
+  background-color: var(--couleur-fond-clair);
+  text-align: center;
+}
+
+#avis h2 {
+  margin-bottom: 1rem;
+}
+
+.avis-note {
+  margin-bottom: 2rem;
+}
+
+.avis-etoiles {
+  color: #e6a817;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.avis-score {
+  font-weight: 600;
+}
+
+.avis-grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.avis-carte {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.avis-etoiles-petit {
+  color: #e6a817;
+  margin-bottom: 0.5rem;
+}
+
+.avis-auteur {
+  margin-top: 0.75rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* CONTACT */
 #contact {
   text-align: center;
 }
 
 #contact h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-/* Footer */
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.contact-infos {
+  flex: 1 1 250px;
+  text-align: left;
+}
+
+.contact-carte {
+  flex: 1 1 350px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* FOOTER */
 footer {
   text-align: center;
   padding: 1.5rem;
@@ -151,12 +358,14 @@ footer {
   max-width: none;
 }
 
+/* RESPONSIVE */
 @media (max-width: 768px) {
 
   header {
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
+    position: static;
   }
 
   header nav ul {
@@ -171,10 +380,6 @@ footer {
 
   #hero p {
     font-size: 1rem;
-  }
-
-  #services {
-    flex-direction: column;
   }
 
 }

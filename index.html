@@ -3,18 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Le Bo'Vin - Restaurant à Vincennes</title>
+  <title>Le Bo'Vincennes - Restaurant à Vincennes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
-    <div class="logo">Le Bo'Vin</div>
+    <div class="logo">Le Bo'Vincennes</div>
     <nav>
       <ul>
         <li><a href="#hero">Accueil</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="#menu">Nos Cartes</a></li>
+        <li><a href="#services">Infos pratiques</a></li>
         <li><a href="#a-propos">À propos</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#avis">Avis</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -23,31 +29,163 @@
   <section id="hero">
     <h1>Viandes d'exception à Vincennes</h1>
     <p>Laissez-vous tenter par nos viandes de races et d'origines</p>
-    <img src="images/hero.png" alt="Viande grillée Le Bo'Vin">
     <a href="#contact" class="btn">Réserver une table</a>
+    <div class="scroll-fleche">↓</div>
+  </section>
+
+  <section id="menu">
+    <h2>Nos Cartes</h2>
+    <div class="menu-colonnes">
+
+      <details class="menu-col">
+        <summary>Formule Midi</summary>
+        <div class="menu-contenu">
+          <p class="menu-souscat">Plat seul 17,90€ — Entrée+Plat+Dessert 22,90€ — Formule 2 services 19,90€</p>
+          <h4>Entrées</h4>
+          <p>Ballotine de poulet à la crème de moutarde</p>
+          <p>Poireaux vinaigrette à la truffe et tomates confites</p>
+          <p>Salade de tofu, pousse d'épinard, bouillon japonais</p>
+          <p>Maki sauce california, avocat, saumon</p>
+          <h4>Plats</h4>
+          <p>Faux-filet Angus Argentine, frites allumettes</p>
+          <p>Bavette d'aloyau Angus, frites allumettes</p>
+          <p>Foie de veau au vinaigre de framboise</p>
+          <p>Aiguillettes de poulet, crème de champignons, penne</p>
+          <h4>Desserts</h4>
+          <p>Soupe de kiwi et fraise, concassé de meringue</p>
+          <p>Crêpe au sucre, Nutella ou figues</p>
+          <p>Duo de chocolat noir et blanc</p>
+        </div>
+      </details>
+
+      <details class="menu-col">
+        <summary>Notre Carte</summary>
+        <div class="menu-contenu">
+          <h4>Entrées</h4>
+          <p>Velouté de morilles et œufs pochés — 13€</p>
+          <p>Terrine de foie gras, chutney pomme-poire-figue — 19€</p>
+          <p>Planche de charcuteries ibériques — 22€</p>
+          <h4>Plats</h4>
+          <p>Picanha Argentine 250g — 28€ / XXL 450g — 45€</p>
+          <p>Noix d'entrecôte Argentine 250g — 29€ / XXL 450g — 48€</p>
+          <p>Côte de bœuf individuelle 500g — 32€</p>
+          <p>Côte de veau tomahawk 400g aux cèpes — 32€</p>
+          <h4>Poissons</h4>
+          <p>Filet de turbo au beurre blanc vanillé — 29€</p>
+          <p>Tartare de saumon soja, sésame, purée d'avocat — 23€</p>
+          <h4>Desserts</h4>
+          <p>Pavlova, meringue, mascarpone framboise — 10€</p>
+          <p>Baba au rhum "bouchon" — 10€</p>
+        </div>
+      </details>
+
+      <details class="menu-col">
+        <summary>Viandes d'Exception</summary>
+        <div class="menu-contenu">
+          <p>Côte de bœuf tomahawk Black Angus, 1kg — 110€</p>
+          <p>Côte de bœuf maturée, 1kg — 89€</p>
+          <p>Pavé d'entrecôte Wagyu Kobé, 200g — 99€</p>
+          <p>T-Bone de bœuf Black Angus, 500g — 43€</p>
+          <p>Picanha à partager, 1kg (2-3 pers.) — 89€</p>
+        </div>
+      </details>
+
+    </div>
   </section>
 
   <section id="services">
-    <h2>Nos services</h2>
-    <div class="service">Service voiturier</div>
-    <div class="service">Wi-Fi gratuit</div>
-    <div class="service">Accès PMR</div>
+    <h2>Infos pratiques</h2>
+    <div class="infos-grille">
+
+      <div class="infos-bloc">
+        <h3>Horaires</h3>
+        <p>Ouvert 7j/7</p>
+        <p>11h30 – 14h30</p>
+        <p>18h30 – 22h30</p>
+      </div>
+
+      <div class="infos-bloc">
+        <h3>Services</h3>
+        <p>Service voiturier</p>
+        <p>Wi-Fi gratuit</p>
+        <p>Accès PMR</p>
+      </div>
+
+      <div class="infos-bloc">
+        <h3>Moyens de paiement</h3>
+        <div class="paiements">
+          <span class="paiement-badge">CB / Visa / Mastercard</span>
+          <span class="paiement-badge">Sans contact</span>
+          <span class="paiement-badge">Chèque</span>
+          <span class="paiement-badge">Ticket Restaurant</span>
+        </div>
+      </div>
+
+    </div>
   </section>
 
   <section id="a-propos">
     <h2>À propos</h2>
-    <p>Le Bo'Vin vous accueille à Vincennes pour déguster des viandes de races et d'origines sélectionnées avec exigence, dans un cadre chaleureux.</p>
+    <p>Le Bo'Vincennes vous accueille à Vincennes pour déguster des viandes de races et d'origines sélectionnées avec exigence, dans un cadre chaleureux et climatisé.</p>
+  </section>
+
+  <section id="galerie">
+    <h2>Galerie</h2>
+    <div class="galerie-grille">
+      <img src="images/plat1.png" alt="Côte de bœuf grillée">
+      <img src="images/plat2.png" alt="Tiramisu maison">
+      <img src="images/plat3.png" alt="Tartare de bœuf">
+  </div>
+  </section>
+
+  <section id="avis">
+    <h2>Ils en parlent mieux que nous</h2>
+    <div class="avis-note">
+      <span class="avis-etoiles">★★★★★</span>
+      <span class="avis-score">4,5/5 — 1580 avis Google</span>
+    </div>
+    <div class="avis-grille">
+      <div class="avis-carte">
+        <p class="avis-etoiles-petit">★★★★★</p>
+        <p>"Plats délicieux et bien présentés. Salle joliment décorée et climatisée. Service impeccable, à recommander."</p>
+        <p class="avis-auteur">— Anh L.</p>
+      </div>
+      <div class="avis-carte">
+        <p class="avis-etoiles-petit">★★★★★</p>
+        <p>"Si vous aimez la viande, c'est l'endroit qu'il vous faut. Cuisson parfaite, portions généreuses, desserts faits maison. Aucune fausse note."</p>
+        <p class="avis-auteur">— Bouzou D.</p>
+      </div>
+      <div class="avis-carte">
+        <p class="avis-etoiles-petit">★★★★★</p>
+        <p>"Excellent repas, espace bien pensé. Plats de qualité pour des tarifs justifiés, tiramisu excellent."</p>
+        <p class="avis-auteur">— Clément S.</p>
+      </div>
+    </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>6B avenue du Général de Gaulle, 94300 Vincennes</p>
-    <p>Téléphone : 01 79 86 27 60</p>
-    <p>Email : lebovincennes@gmail.com</p>
+    <div class="contact-wrapper">
+      <div class="contact-infos">
+        <p>6B avenue du Général de Gaulle, 94300 Vincennes</p>
+        <p>Téléphone : 01 79 86 27 60</p>
+        <p>Email : lebovincennes@gmail.com</p>
+      </div>
+      <div class="contact-carte">
+        <iframe
+          src="https://www.google.com/maps?q=6B+avenue+du+G%C3%A9n%C3%A9ral+de+Gaulle,+94300+Vincennes&output=embed"
+          width="100%"
+          height="300"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2026 Le Bo'Vin - Tous droits réservés</p>
+    <p>&copy; 2026 Le Bo'Vincennes - Tous droits réservés</p>
   </footer>
 
   <script src="script.js"></script>
