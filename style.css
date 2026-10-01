@@ -420,6 +420,10 @@ footer {
   z-index: 100;
 }
 
+.modale-overlay[hidden] {
+  display: none;
+}
+
 .modale-contenu {
   background: white;
   padding: 2rem;
