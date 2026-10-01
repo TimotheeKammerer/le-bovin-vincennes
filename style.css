@@ -83,6 +83,10 @@ header nav ul {
   flex-wrap: wrap;
 }
 
+.menu-burger {
+  display: none;
+}
+
 /* HERO */
 #hero {
   position: relative;
@@ -475,6 +479,3 @@ footer {
   cursor: pointer;
 }
 
-.menu-burger {
-  display: none;
-}
