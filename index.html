@@ -11,9 +11,10 @@
 </head>
 <body>
 
-  <header>
+ <header>
     <div class="logo">Le Bo'Vincennes</div>
-    <nav>
+    <button id="menu-burger" class="menu-burger" aria-label="Ouvrir le menu">☰</button>
+    <nav id="nav-mobile">
       <ul>
         <li><a href="#hero">Accueil</a></li>
         <li><a href="#menu">Nos Cartes</a></li>
@@ -173,6 +174,7 @@
 
         <form name="reservation" method="POST" data-netlify="true" action="/succes.html" id="form-reservation" class="form-reservation">
           <input type="hidden" name="form-name" value="reservation">
+  
 
           <label for="nom">Nom</label>
           <input type="text" id="nom" name="nom" required>

@@ -46,3 +46,16 @@ btnConfirmer.addEventListener('click', function () {
       console.error(error);
     });
 });
+
+const btnBurger = document.getElementById('menu-burger');
+const navMobile = document.getElementById('nav-mobile');
+
+btnBurger.addEventListener('click', function () {
+  navMobile.classList.toggle('ouvert');
+});
+
+document.querySelectorAll('#nav-mobile a').forEach(function (lien) {
+  lien.addEventListener('click', function () {
+    navMobile.classList.remove('ouvert');
+  });
+});
