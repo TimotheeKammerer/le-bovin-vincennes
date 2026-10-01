@@ -4,6 +4,8 @@ const recap = document.getElementById('recap-reservation');
 const btnConfirmer = document.getElementById('confirmer-envoi');
 const btnAnnuler = document.getElementById('annuler-envoi');
 
+let donneesFormulaire = null;
+
 form.addEventListener('submit', function (e) {
   e.preventDefault();
 
@@ -12,6 +14,8 @@ form.addEventListener('submit', function (e) {
   const date = document.getElementById('date').value;
   const heure = document.getElementById('heure').value;
   const personnes = document.getElementById('personnes').value;
+
+  donneesFormulaire = { nom, telephone, date, heure, personnes };
 
   recap.innerHTML = `
     <strong>${nom}</strong><br>
@@ -27,5 +31,18 @@ btnAnnuler.addEventListener('click', function () {
 });
 
 btnConfirmer.addEventListener('click', function () {
-  form.submit();
+  const data = new FormData(form);
+
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
+  })
+    .then(() => {
+      window.location.href = '/succes.html';
+    })
+    .catch((error) => {
+      alert("Une erreur est survenue, merci de réessayer ou de nous appeler directement.");
+      console.error(error);
+    });
 });
