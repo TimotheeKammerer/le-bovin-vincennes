@@ -164,12 +164,33 @@
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
+    <h2>Contact & Réservation</h2>
     <div class="contact-wrapper">
       <div class="contact-infos">
         <p>6B avenue du Général de Gaulle, 94300 Vincennes</p>
         <p>Téléphone : 01 79 86 27 60</p>
         <p>Email : lebovincennes@gmail.com</p>
+
+        <form name="reservation" method="POST" data-netlify="true" id="form-reservation" class="form-reservation">
+          <input type="hidden" name="form-name" value="reservation">
+
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" required>
+
+          <label for="telephone">Téléphone</label>
+          <input type="tel" id="telephone" name="telephone" required>
+
+          <label for="date">Date</label>
+          <input type="date" id="date" name="date" required>
+
+          <label for="heure">Heure</label>
+          <input type="time" id="heure" name="heure" required>
+
+          <label for="personnes">Nombre de personnes</label>
+          <input type="number" id="personnes" name="personnes" min="1" max="20" required>
+
+          <button type="submit" class="btn">Demander une réservation</button>
+        </form>
       </div>
       <div class="contact-carte">
         <iframe
@@ -182,6 +203,19 @@
         </iframe>
       </div>
     </div>
+
+    <!-- Fenêtre de confirmation -->
+    <div id="modale-confirmation" class="modale-overlay" hidden>
+      <div class="modale-contenu">
+        <h3>Confirmer votre demande</h3>
+        <p id="recap-reservation"></p>
+        <div class="modale-boutons">
+          <button id="confirmer-envoi" class="btn">Confirmer</button>
+          <button id="annuler-envoi" class="btn-secondaire">Modifier</button>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <footer>
